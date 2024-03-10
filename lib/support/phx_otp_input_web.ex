@@ -83,9 +83,7 @@ defmodule PhxOtpInputWeb do
     quote do
       # HTML escaping functionality
       import Phoenix.HTML
-      # Core UI components and translation
-      import PhxOtpInputWeb.CoreComponents
-      import PhxOtpInputWeb.Gettext
+      import Phoenix.HTML.Form
 
       # Shortcut for generating JS commands
       alias Phoenix.LiveView.JS
