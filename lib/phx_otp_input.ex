@@ -1,9 +1,18 @@
 defmodule PhxOtpInput do
-  @moduledoc """
-  PhxOtpInput keeps the contexts that define your domain
-  and business logic.
+  use Phoenix.Component
 
-  Contexts are also responsible for managing your data, regardless
-  if it comes from the database, an external API or others.
+  alias PhxOtpInput.Component
+
+  @moduledoc ~S"""
+  The `PhxOtpInput` component is rendered by calling the `otp_input/1` function and passing it a form field.
   """
+
+  def otp_input(assigns) do
+    assigns =
+      assigns |> assign(module: PhxOtpInput.Component)
+
+    ~H"""
+    <.live_component {assigns} />
+    """
+  end
 end
